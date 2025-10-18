@@ -1,0 +1,36 @@
+{{define "Home"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Street Shop</title>
+</head>
+<body>
+
+   <header>
+        <p class = "HeaderIcon">Home</p>
+        <p class = "HeaderIcon">Add</p>
+        <img class="logo" src="./static/img/logo/1.png" alt="logo de la marque Street Shop">
+   </header>   
+
+   <h1>LES <br> PRODUITS</h1>
+
+   <div class="product-list">
+        {{range .}}
+        <div class="product">
+            <img class="product-image" src="{{.Img}}" alt="{{.ImgAlt}}">
+            <div class="product-info">
+                <p>{{.Name}}</p>
+                <br>
+                <p>{{.Price}}</p>
+                <br>
+                <button class="btn">consulter</button>
+            </div>
+        </div>
+        {{end}}
+   </div>
+</body>
+</html>
+{{end}}
