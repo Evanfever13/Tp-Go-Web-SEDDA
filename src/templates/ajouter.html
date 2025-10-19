@@ -1,0 +1,43 @@
+{{define "Ajouter"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Shop - Ajouter</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="/"><p class = "HeaderIcon">Home</p></a>
+        <a href="/ajouter"><p class = "HeaderIcon">Add</p></a>
+        <img class="logo" src="./static/img/logo/1.png" alt="logo de la marque Street Shop">
+   </header> 
+
+    
+    <div class="product-add-form">
+        <h1>Ajouter un produit :</h1>
+        <form action="/ajouter" method="post">
+            <label for="name">Nom du produit:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description"></textarea><br>
+            <label for="price">Prix:</label><br>
+            <input type="text" id="price" name="price" required><br>
+            <label for="priceRed">Prix réduit:</label><br>
+            <input type="text" id="priceRed" name="priceRed" ><br>
+            <label for="Pourcentage">Pourcentage:</label><br>
+            <input type="text" id="Pourcentage" name="Pourcentage" ><br>
+            <label for="image">URL de l'image:</label><br>
+            <input type="text" id="image" name="image" ><br>
+            <label for="imageAlt">Texte alternatif de l'image:</label><br>
+            <input type="text" id="imageAlt" name="imageAlt" ><br>
+            <label for="sizes">Tailles disponibles (séparées par des virgules):</label><br>
+            <input type="text" id="sizes" name="sizes"><br><br>
+            <input type="submit" value="Ajouter le produit">
+        </form>
+    </div>
+</body>
+</html>
+{{end}}

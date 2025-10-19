@@ -1,0 +1,40 @@
+{{define "Consulter"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Shop - Consulter</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="/"><p class = "HeaderIcon">Home</p></a>
+        <a href="/ajouter"><p class = "HeaderIcon">Add</p></a>
+        <img class="logo" src="./static/img/logo/1.png" alt="logo de la marque Street Shop">
+   </header> 
+
+    <div class="product-details">
+        <img class="product-image" src="{{.Img}}" alt="{{.ImgAlt}}">
+        <div class="product-info">
+            <h1 class="Name">{{.Name}}</h1>
+            <br>
+            <p>Tailles disponibles : {{.Taille}}</p>
+            <br>
+            <p>{{.Description}}</p>
+            <br>
+            {{if .IsReduc}}
+            <span class="old-price">{{.Prix}}</span>
+            <span class="reduc">{{.PourcentageReduc}}</span>
+            <span class="new-price">{{.PrixReduit}}</span>  
+            {{else}}
+            <span class="price">{{.Prix}}</span>
+            {{end}}
+            <br>
+            <a href="/produit?Id={{.Id}}"><button class="btn">Ajouter au panier</button></a>
+        </div>
+    </div>
+</body>
+</html>
+{{end}}
