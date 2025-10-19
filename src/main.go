@@ -95,33 +95,6 @@ func main() {
 		}
 
 		temp.ExecuteTemplate(w, "Ajouter", ListProduits)
-		priceStr := r.FormValue("price")
-		price, _ := strconv.Atoi(priceStr)
-
-		priceRedStr := r.FormValue("priceRed")
-		priceRed, _ := strconv.Atoi(priceRedStr)
-
-		pourcentageStr := r.FormValue("Pourcentage")
-		pourcentage, _ := strconv.Atoi(pourcentageStr)
-
-		isReduc := priceRedStr != "" || pourcentageStr != ""
-
-		NewProduit := Produits{
-			Img:              r.FormValue("image"),
-			ImgAlt:           r.FormValue("imageAlt"),
-			Name:             r.FormValue("name"),
-			Prix:             price,
-			PrixReduit:       priceRed,
-			PourcentageReduc: pourcentage,
-			Description:      r.FormValue("description"),
-			Taille:           r.FormValue("sizes"),
-			IsReduc:          isReduc,
-			Id:               len(ListProduits) + 1,
-		}
-
-		ListProduits = append(ListProduits, NewProduit)
-
-		temp.ExecuteTemplate(w, "Ajouter", ListProduits)
 	})
 	http.HandleFunc("/produit", func(w http.ResponseWriter, r *http.Request) {
 		idProduit := r.FormValue("id")
